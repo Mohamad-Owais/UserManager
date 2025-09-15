@@ -28,10 +28,12 @@ It focuses on *security, interactivity, and real-time updates*, making it a grea
 ## ⚡ Getting Started
 
 ### 1. Clone the repository
-```bash
+
+
 git clone https://github.com/your-username/repository-name.git
 
 2. Install dependencies
+
 npm install
 
 3. Configure database
