@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Edit Username for <%=user.email%> :</h1>
+    <form
+      method="POST"
+      action="/users/<%=user.id%>?_method=PATCH"
+      class="formInp"
+    >
+      <label for="usrnme">Username:</label>
+      <input
+        id="usrnme"
+        type="text"
+        name="username"
+        placeholder="<%=user.username%>"
+      />
+      <label for="pswd">Password:</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required
+      />
+      <button type="submit" class="btn">Update</button>
+    </form>
+    <% if (typeof error !== "undefined") { %>
+    <div id="popup" class="popup-modal" style="display: flex">
+      <div class="popup-content">
+        <h3><%= error %></h3>
+        <button onclick="document.getElementById('popup').style.display='none'">
+          Close
+        </button>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>

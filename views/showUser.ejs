@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Users</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      th {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div style="font-weight: 700; letter-spacing: 1px">UserManager</div>
+      <div>
+        <a href="/">Home</a>
+        <a href="/users">Show Users</a>
+        <a href="/addUser">Add User</a>
+      </div>
+    </nav>
+    <h3
+      style="
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        line-height: 50px;
+        display: block;
+      "
+    >
+      The Total Number Of Users Are:
+      <span style="color: rgb(0, 123, 255)"><%=count%></span>
+    </h3>
+    <div class="container">
+      <h2>All Users</h2>
+      <a href="/addUser" class="btn" style="margin-bottom: 1.5rem"
+        >Add New User</a
+      >
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Edit-Username</th>
+          <th>Delete-User</th>
+        </tr>
+        <%for (user of users){%>
+        <tr>
+          <td><%=user.id%></td>
+          <td><%=user.username%></td>
+          <td><%=user.email%></td>
+          <td>
+            <form
+              action="/users/<%=user.id%>/edit"
+              method="GET"
+              class="edit-form"
+            >
+              <button class="btn">Edit</button>
+            </form>
+          </td>
+          <td>
+            <form action="/users/<%=user.id%>/delete" method="get">
+              <button class="btn">Delete</button>
+            </form>
+          </td>
+        </tr>
+
+        <%}%>
+      </table>
+    </div>
+  </body>
+</html>

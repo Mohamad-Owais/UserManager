@@ -1,0 +1,191 @@
+/* =====================
+   Global Styles
+   ===================== */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #e3e6ec 0%, #cfd8e3 100%);
+  color: #23272b;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* =====================
+   Navbar Styles (All Pages)
+   ===================== */
+nav {
+  height: 3rem;
+  background: #f8f9fa;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+nav a {
+  color: #23272b;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #0d6efd;
+}
+
+/* =====================
+   Home Page Styles (home.ejs)
+   ===================== */
+.container {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06),
+    /* outer shadow */ 0 1.5px 0.5px 0 rgba(0, 0, 0, 0.04),
+    /* subtle bottom shadow */ inset 0 2px 8px rgba(0, 0, 0, 0.07),
+    /* top inner shadow */ inset 0 -4px 12px rgba(0, 0, 0, 0.1),
+    /* bottom inner shadow */ inset 2px 0 8px rgba(0, 0, 0, 0.04),
+    /* left inner shadow */ inset -2px 0 8px rgba(0, 0, 0, 0.04); /* right inner shadow */
+  padding: 2.5rem 2rem;
+}
+
+h1,
+h2 {
+  color: #000000;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #98a0a7;
+  text-align: center;
+  white-space: pre;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  display: block;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem auto 0 auto;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+.btn:hover {
+  background: #0b5ed7;
+  color: #e9ecef;
+}
+
+/* =====================
+   Add User Page Styles (addUser.ejs)
+   ===================== */
+.formInp {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 auto;
+  max-width: 400px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04),
+    inset 0 2px 8px rgba(0, 0, 0, 0.06), inset 0 -2px 8px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.5rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  background: #f9fafb;
+  color: #23272b;
+  font-size: 1rem;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1.5px 4px rgba(0, 0, 0, 0.08);
+}
+input:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+/* =====================
+   Show Users Page Styles (showUser.ejs)
+   ===================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06),
+    inset 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+th,
+td {
+  padding: 1rem 0.75rem;
+  text-align: left;
+}
+th {
+  background: #f1f3f5;
+  color: #23272b;
+  font-weight: 700;
+  border-bottom: 3px solid #1a7bdc;
+}
+td {
+  color: #495057;
+  border-bottom: 1px solid #dee2e6;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================
+   Popup Modal Styles (edit.ejs error popup)
+   ===================== */
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: #fff;
+  color: #23272b;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  font-size: 1.2rem;
+}
+.popup-content button {
+  margin-top: 1rem;
+  background: #fd0d0d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.popup-content button:hover {
+  background: #0b5ed7;
+  color: #e9ecef;
+}

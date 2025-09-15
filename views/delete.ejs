@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=D, initial-scale=1.0" />
+    <title>Delete User</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Delete <%=user.username%> !</h1>
+    <p>Enter Password To Delete <%=user.username%></p>
+    <form
+      method="POST"
+      action="/users/<%= user.id %>?_method=DELETE"
+      class="formInp"
+    >
+      <label for="pswd">Password:</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required
+      />
+      <button class="btn">Delete</button>
+    </form>
+    <% if (typeof error !== "undefined") { %>
+    <div id="popup" class="popup-modal" style="display: flex">
+      <div class="popup-content">
+        <h3><%= error %></h3>
+        <button onclick="document.getElementById('popup').style.display='none'">
+          Close
+        </button>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>
